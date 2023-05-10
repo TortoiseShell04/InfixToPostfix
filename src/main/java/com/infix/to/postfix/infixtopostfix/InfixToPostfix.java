@@ -11,24 +11,17 @@ public class InfixToPostfix {
 
     public static void main(String[] args) 
     {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter expression: ");
-//        String expression = sc.nextLine();
-//        Node n = makeTree(expression);
-//        postOrderTraversing(n);
-//        sc.close();
         JFrame frame = new JFrame();
         frame.setSize(358,311);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         MainAppPanel p = new MainAppPanel();
         frame.add(p);
         frame.setTitle("Infix to Postfix");
-        BufferedImage icon = null;
-        try {
-            icon = ImageIO.read(new File("icon.png"));
-        }
-        catch (IOException ie){}
-        frame.setIconImage(icon);
+        frame.setLocationRelativeTo(null);
+        ImageIcon icon;
+        icon = new ImageIcon("icon.png");
+
+        frame.setIconImage(icon.getImage());
         frame.setVisible(true);
     }
     static String runApp(String exp){
