@@ -1,8 +1,10 @@
+package com.infix.to.postfix.infixtopostfix;
+
 import java.util.LinkedList;
 
 public class Stack 
 {
-    private LinkedList<Node> ll;
+    private final LinkedList<Node> ll;
     
     public Stack(){ll = new LinkedList<>();}
 

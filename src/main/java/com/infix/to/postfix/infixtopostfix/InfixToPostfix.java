@@ -1,15 +1,41 @@
-import java.util.Scanner;
+package com.infix.to.postfix.infixtopostfix;
 
-public class Main
-{
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+
+public class InfixToPostfix {
+
     public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter expression: ");
-        String expression = sc.nextLine();
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter expression: ");
+//        String expression = sc.nextLine();
+//        Node n = makeTree(expression);
+//        postOrderTraversing(n);
+//        sc.close();
+        JFrame frame = new JFrame();
+        frame.setSize(358,311);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        MainAppPanel p = new MainAppPanel();
+        frame.add(p);
+        frame.setTitle("Infix to Postfix");
+        BufferedImage icon = null;
+        try {
+            icon = ImageIO.read(new File("icon.png"));
+        }
+        catch (IOException ie){}
+        frame.setIconImage(icon);
+        frame.setVisible(true);
+    }
+    static String runApp(String exp){
+        String expression = exp;
         Node n = makeTree(expression);
-        postOrderTraversing(n);
-        sc.close();
+        StringBuilder s = new StringBuilder();
+        return postOrderTraversing(n,s);
     }
     static boolean isAnOperation(char x)
     {
@@ -88,13 +114,13 @@ public class Main
         root.setLeft(s.pop());
         return root;
     }
-    static void postOrderTraversing(Node n)
+    static String postOrderTraversing(Node n,StringBuilder s)
     {
-        if(n == null){return;}
-        postOrderTraversing(n.getLeft());
-        postOrderTraversing(n.getRight());
-        System.out.print(n.getData() + " ");
+        if(n == null){return "";}
+        postOrderTraversing(n.getLeft(),s);
+        postOrderTraversing(n.getRight(),s);
+        s.append(n.getData() + " ");
+        return s.toString();
     }
 
 }
-
