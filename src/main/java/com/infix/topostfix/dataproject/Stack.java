@@ -1,12 +1,10 @@
-package com.infix.to.postfix.infixtopostfix;
+package com.infix.topostfix.dataproject;
 
-import java.util.LinkedList;
 
-public class Stack 
-{
-    private final LinkedList<Node> ll;
-    
-    public Stack(){ll = new LinkedList<>();}
+public class Stack {
+    private final LinkedList ll;
+
+    public Stack(){ll = new LinkedList();}
 
 
     boolean isEmpty() {return ll.isEmpty();}
@@ -26,5 +24,6 @@ public class Stack
         if(isEmpty()){return null;}
         else{return ll.getFirst();}
     }
-    public int getSize(){return ll.size();}
+    public int getSize(){
+        return ll.getSize();}
 }

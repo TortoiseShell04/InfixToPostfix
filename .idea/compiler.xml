@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="InfixToPostfix" />
+        <module name="DataProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="InfixToPostfix" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

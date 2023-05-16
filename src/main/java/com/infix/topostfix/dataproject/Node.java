@@ -1,7 +1,6 @@
-package com.infix.to.postfix.infixtopostfix;
+package com.infix.topostfix.dataproject;
 
-public class Node
-{
+public class Node {
     private String data;
     private Node left,right;
     public String getData() {
@@ -25,6 +24,4 @@ public class Node
     public Node(String data) {
         this.data = data;
     }
-
-    
 }
